@@ -1,15 +1,12 @@
-import os
 import numpy as np
 from PIL import Image
 
 
-def tif2dtm(datapath: str, filepaths: list):
+def tif2dtm(filepaths: list[str]):
     dtm_list = []
     filecount = len(np.unique(filepaths))
     for file in filepaths:
-        filepath = os.path.join(datapath, file)
-        z_grid = Image.open(filepath)
-
+        z_grid = Image.open(file)
         # dimensions
         east_dim, north_dim = z_grid.size
 

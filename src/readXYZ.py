@@ -1,13 +1,12 @@
-import os
 import numpy as np
 
-def xyz2list(datapath: str, filepaths: list):
+
+def xyz2list(filepaths: list[str]):
     dtm_list = []
     filecount = len(np.unique(filepaths))
 
     for file in filepaths:
-        filepath = os.path.join(datapath, file)
-        data = np.loadtxt(filepath,delimiter=' ')
+        data = np.loadtxt(file,delimiter=' ')
         # print(data[:10,:])
         x = data[:,0]
         y = data[:,1]
