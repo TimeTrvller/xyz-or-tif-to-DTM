@@ -43,5 +43,3 @@ elif fileExtention == '.tif':
 else:
     print('invalid file type')
     exit()
-
-
